@@ -1,5 +1,5 @@
-class Pelicula
-{
+export default class Pelicula //export default permite exportar un unico elemento, export solo permite exportar varios elementos
+{ 
     #codigo;
     #titulo;
     #descripcion;
