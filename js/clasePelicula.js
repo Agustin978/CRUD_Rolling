@@ -12,7 +12,7 @@ export default class Pelicula //export default permite exportar un unico element
     #estado;
     constructor(titulo, descripcion, img, genero, anio, duracion, pais, reparto)
     {
-        this.#codigo = 0;
+        this.#codigo = uuidv4();
         this.#titulo = titulo;
         this.#descripcion = descripcion;
         this.#img = img;
@@ -28,99 +28,114 @@ export default class Pelicula //export default permite exportar un unico element
     // Getter y Setter para el título
     get titulo() 
     {
-        return this._titulo;
+        return this.#titulo;
     }
     
     set titulo(nuevoTitulo) 
     {
-        this._titulo = nuevoTitulo;
+        this.#titulo = nuevoTitulo;
     }
     
     // Getter y Setter para la descripción
     get descripcion() 
     {
-        return this._descripcion;
+        return this.#descripcion;
     }
     
     set descripcion(nuevaDescripcion) 
     {
-        this._descripcion = nuevaDescripcion;
+        this.#descripcion = nuevaDescripcion;
     }
     
     // Getter y Setter para la imagen
     get img() 
     {
-        return this._img;
+        return this.#img;
     }
     
     set img(nuevaImg) 
     {
-        this._img = nuevaImg;
+        this.#img = nuevaImg;
     }
     
     // Getter y Setter para el género
     get genero() 
     {
-        return this._genero;
+        return this.#genero;
     }
     
     set genero(nuevoGenero) 
     {
-        this._genero = nuevoGenero;
+        this.#genero = nuevoGenero;
     }
     
     // Getter y Setter para el año
     get anio() 
     {
-        return this._anio;
+        return this.#anio;
     }
     
     set anio(nuevoAnio) 
     {
-        this._anio = nuevoAnio;
+        this.#anio = nuevoAnio;
     }
     
     // Getter y Setter para la duración
     get duracion() 
     {
-        return this._duracion;
+        return this.#duracion;
     }
     
     set duracion(nuevaDuracion) 
     {
-        this._duracion = nuevaDuracion;
+        this.#duracion = nuevaDuracion;
     }
     
     // Getter y Setter para el país
     get pais() 
     {
-        return this._pais;
+        return this.#pais;
     }
     
     set pais(nuevoPais) 
     {
-        this._pais = nuevoPais;
+        this.#pais = nuevoPais;
     }
     
     // Getter y Setter para el reparto
     get reparto() 
     {
-        return this._reparto;
+        return this.#reparto;
     }
     
     set reparto(nuevoReparto) 
     {
-        this._reparto = nuevoReparto;
+        this.#reparto = nuevoReparto;
     }
     
     // Getter y Setter para el estado
     get estado() 
     {
-        return this._estado;
+        return this.#estado;
     }
     
     set estado(nuevoEstado) 
     {
-        this._estado = nuevoEstado;
+        this.#estado = nuevoEstado;
+    }
+
+    toJSON()
+    {
+        return{
+            codigo: this.codigo,
+            titulo: this.titulo,
+            descripcion: this.descripcion,
+            imagen: this.img,
+            genero: this.genero,
+            duracion: this.duracion,
+            pais: this.pais,
+            reparto: this.reparto,
+            estado: this.estado
+        }
     }
 }
